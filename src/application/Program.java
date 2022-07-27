@@ -31,11 +31,16 @@ public class Program {
 			System.out.println(obj);
 		}
 		
-		System.out.println("\n\t\t=== TEST 4: seller indert  =====");
-		Seller newSeller = new Seller(null, "Poll", "poll@gmail.com", new Date(), 3000.0, department);
+		System.out.println("\n\t\t=== TEST 4: seller insert  =====");
+		Seller newSeller = new Seller(null, "Poll MArcs", "pollmccx@gmail.com", new Date(), 3000.0, department);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New id = " + newSeller.getId());
-		
-	}
+
+		System.out.println("\n\t\t=== TEST 5: seller update  =====");
+		seller = sellerDao.findById(1);
+		seller.setName("Maria Waine ");
+		sellerDao.update(seller);
+		System.out.println("Update completed!!");
+	}	
 
 }
