@@ -50,7 +50,7 @@ public class SellerDaoJDBC implements SellerDao{
 					int id = rs.getInt(1);
 					obj.setId(id);
 				}
-				DB.closeResultset(rs);
+				DB.closeResultSet(rs);
 			}
 			else {
 				throw new DbException("Unexpected error!! No rows affected!!");
@@ -67,7 +67,7 @@ public class SellerDaoJDBC implements SellerDao{
 
 	@Override
 	public void update(Seller obj) {
-PreparedStatement st = null;
+		PreparedStatement st = null;
 		
 		try {
 			st = conn.prepareStatement(
@@ -139,7 +139,7 @@ PreparedStatement st = null;
 		}
 		finally {
 			DB.closeStatement(st);
-			DB.closeResultset(rs);
+			DB.closeResultSet(rs);
 		}
 		
 	}
@@ -200,7 +200,7 @@ PreparedStatement st = null;
 		}
 		finally {
 			DB.closeStatement(st);
-			DB.closeResultset(rs);
+			DB.closeResultSet(rs);
 		}
 	}
 
@@ -243,7 +243,7 @@ PreparedStatement st = null;
 		}
 		finally {
 			DB.closeStatement(st);
-			DB.closeResultset(rs);
+			DB.closeResultSet(rs);
 		}
 	}
 
